@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { StoreDevtoolsModule } from '@ngrx/store‐devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { UsuariosAltaComponent } from './components/usuarios-alta/usuarios-alta.
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { UserEffects } from './reducers/user.effects';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,10 +37,11 @@ import { UserEffects } from './reducers/user.effects';
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([UserEffects])
-
-    // !environment.production ? StoreDevtoolsModule.instrument() : [],
-    // StoreRouterConnectingModule.forRoot({ routerState: RouterState.Minimal })
+    EffectsModule.forRoot([UserEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
