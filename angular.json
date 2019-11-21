@@ -141,14 +141,16 @@
             "polyfills": "projects/redux/src/polyfills.ts",
             "tsConfig": "projects/redux/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/redux/src/favicon.ico",
-              "projects/redux/src/assets"
-            ],
+            "assets": [],
             "styles": [
-              "projects/redux/src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
