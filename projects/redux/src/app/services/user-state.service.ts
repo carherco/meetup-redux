@@ -17,7 +17,6 @@ export class ReduxUsersStateService {
     constructor() {}
 
     public dispatch = (action: UserAction) => {
-      console.log(action);
       this.state = reducer(this.state, action);
       this.state$.next(this.getSnapshot());
     }

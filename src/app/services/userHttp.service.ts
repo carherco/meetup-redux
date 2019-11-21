@@ -7,13 +7,14 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserHttpService {
 
   url_api: string = environment.api_url + 'users';
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<User[]> {
+    console.log('Llamada a getAll() de UserHttpService');
     return this.http.get<User[]>(this.url_api);
   }
 
