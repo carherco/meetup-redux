@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_url: 'https://jsonplaceholder.typicode.com/'
+  // api_url: 'https://jsonbox.io/box_b7be481ac962870ba73b/meetup_redux'
 };
 
 /*
